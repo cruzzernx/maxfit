@@ -1,0 +1,130 @@
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 12px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+/* ── Avatar ── */
+.profile-avatar-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.profile-avatar-img,
+.profile-avatar-initials {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2.5px solid var(--green);
+  transition: border-color 0.3s;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar-initials {
+  background: var(--green-dim);
+  color: var(--green);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.profile-avatar-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.profile-avatar-wrap:hover .profile-avatar-overlay { opacity: 1; }
+.profile-avatar-wrap:hover .profile-avatar-img,
+.profile-avatar-wrap:hover .profile-avatar-initials {
+  border-color: var(--green-dark);
+}
+
+/* ── Info ── */
+.profile-info { text-align: center; }
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.profile-role {
+  font-size: 11px;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Variantes de cor por cargo */
+.profile-role--admin    { color: #F59E0B; }
+.profile-role--personal { color: #60A5FA; }
+.profile-role--user     { color: var(--green); }
+
+.profile-pro-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #D4AF37;
+  border: 1px solid #D4AF37;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* ── Seletor de cores ── */
+.accent-picker {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.accent-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.accent-dot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px var(--dot-color);
+}
+
+.accent-dot--active {
+  border-color: var(--text);
+  transform: scale(1.25);
+  box-shadow: 0 0 10px var(--dot-color);
+}

@@ -1,0 +1,309 @@
+/* ── Card de upgrade ──────────────────────────────────────────── */
+.upgrade-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+  border: 1px solid #3a3520;
+  border-left: 3px solid #D4AF37;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0f0e0a 0%, #1a1810 100%);
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+
+.upgrade-card:hover { border-color: #D4AF37; }
+
+.upgrade-card--active {
+  border-left-color: #D4AF37;
+  background: linear-gradient(135deg, #0f0e0a 0%, #1c1a0e 100%);
+}
+
+.upgrade-card__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.upgrade-card__badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #D4AF37;
+  border: 1px solid #D4AF37;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.pro-seal {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #080808;
+  background: #D4AF37;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.upgrade-card__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #D4AF37;
+  text-transform: uppercase;
+}
+
+.upgrade-card__sub {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.upgrade-card__sub strong { color: var(--text); font-weight: 600; }
+
+/* ── Botões ───────────────────────────────────────────────────── */
+.upgrade-btn {
+  padding: 10px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 1px solid #D4AF37;
+  background: #D4AF37;
+  color: #080808;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.upgrade-btn:hover {
+  background: #B8960C;
+  border-color: #B8960C;
+  box-shadow: 0 2px 16px rgba(212,175,55,0.25);
+}
+
+.upgrade-btn--cancel {
+  background: transparent;
+  color: var(--text-dim);
+  border-color: var(--border);
+  font-size: 11px;
+}
+
+.upgrade-btn--cancel:hover {
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: none;
+}
+
+.upgrade-btn--ghost {
+  background: transparent;
+  color: var(--text-dim);
+  border-color: var(--border);
+}
+
+.upgrade-btn--ghost:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.upgrade-btn--confirm {
+  background: #D4AF37;
+  color: #080808;
+  border-color: #D4AF37;
+}
+
+/* ── Modal overlay ────────────────────────────────────────────── */
+.upgrade-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Modal ────────────────────────────────────────────────────── */
+.upgrade-modal {
+  background: #0f0f0f;
+  border: 1px solid #2C2A24;
+  border-top: 2px solid #D4AF37;
+  border-radius: 10px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 460px;
+  animation: modalIn 0.25s ease both;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.upgrade-modal__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #D4AF37;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.upgrade-modal__title {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #F0EDE6;
+  margin-bottom: 24px;
+}
+
+/* ── Preço ────────────────────────────────────────────────────── */
+.upgrade-modal__price {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 28px;
+  line-height: 1;
+}
+
+.upgrade-modal__currency {
+  font-size: 16px;
+  font-weight: 600;
+  color: #D4AF37;
+  margin-top: 6px;
+}
+
+.upgrade-modal__amount {
+  font-size: 56px;
+  font-weight: 900;
+  color: #D4AF37;
+  letter-spacing: -2px;
+}
+
+.upgrade-modal__cents {
+  font-size: 18px;
+  font-weight: 600;
+  color: #D4AF37;
+  margin-top: 10px;
+}
+
+.upgrade-modal__cents span {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+/* ── Features ─────────────────────────────────────────────────── */
+.upgrade-modal__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.upgrade-modal__features li {
+  font-size: 13px;
+  color: #888880;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-check {
+  color: #D4AF37;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.upgrade-modal__divider {
+  height: 1px;
+  background: #2C2A24;
+  margin-bottom: 16px;
+}
+
+.upgrade-modal__disclaimer {
+  font-size: 11px;
+  color: #555550;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.upgrade-modal__disclaimer code {
+  background: #1a1a1a;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #888880;
+}
+
+.upgrade-modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* ── Banner de sucesso flutuante ───────────────────────────── */
+.pro-banner {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #D4AF37;
+  color: #080808;
+  padding: 14px 28px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(212,175,55,0.35);
+  animation: bannerIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+  /* Garante que não bloqueia interações abaixo */
+  pointer-events: none;
+}
+
+.pro-banner--out {
+  animation: bannerOut 0.5s ease forwards;
+}
+
+@keyframes bannerIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes bannerOut {
+  from { opacity: 1; transform: translateX(-50%) translateY(0);    }
+  to   { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+}
+
+.pro-banner__check {
+  font-size: 18px;
+  font-weight: 900;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pro-banner__title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pro-banner__sub {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.75;
+  margin-top: 2px;
+}

@@ -1,0 +1,146 @@
+/* ─── Container principal ─────────────────────────────────────── */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+
+  /* Fase de entrada: começa invisível e clareia */
+  animation: introFadeIn 1s ease forwards;
+}
+
+/* Fase de saída: some para cima com fade */
+.intro.exit {
+  animation: introFadeOut 0.6s ease forwards;
+}
+
+@keyframes introFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes introFadeOut {
+  from { opacity: 1; transform: translateY(0);    }
+  to   { opacity: 0; transform: translateY(-24px); }
+}
+
+/* ─── Glow radial na cor do acento ───────────────────────────── */
+.intro-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+  animation: glowPulse 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.7; }
+  50%       { transform: scale(1.15); opacity: 1;   }
+}
+
+/* ─── Logotipo ────────────────────────────────────────────────── */
+.intro-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #fff;
+  opacity: 0;
+  animation: slideDown 0.7s ease 0.4s forwards;
+}
+
+.intro-logo b  { color: var(--accent); }
+.intro-bolt    { color: var(--accent); font-size: 26px; }
+
+/* ─── Saudação ────────────────────────────────────────────────── */
+.intro-welcome {
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  opacity: 0;
+  animation: slideDown 0.7s ease 0.75s forwards;
+}
+
+.intro-name {
+  color: var(--accent);
+  text-shadow: 0 0 24px var(--accent);
+}
+
+/* ─── Spinner ─────────────────────────────────────────────────── */
+.intro-spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 1.2s forwards;
+}
+
+.intro-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.intro-loading-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ─── Barra de progresso ──────────────────────────────────────── */
+.intro-bar-track {
+  width: min(320px, 70vw);
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 1.4s forwards;
+}
+
+.intro-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent);
+  animation: barGrow 2s ease 1.5s forwards;
+}
+
+@keyframes barGrow {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* ─── Animações de entrada compartilhadas ─────────────────────── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}

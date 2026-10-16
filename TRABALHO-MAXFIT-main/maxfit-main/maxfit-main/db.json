@@ -1,0 +1,492 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Carlos Silva",
+      "email": "carlos@email.com",
+      "password": "123456",
+      "role": "user",
+      "plan": "Premium",
+      "status": "active",
+      "joined": "2024-01-15",
+      "avatar": "CS"
+    },
+    {
+      "id": "2",
+      "name": "Ana Souza",
+      "email": "ana@email.com",
+      "password": "123456",
+      "role": "user",
+      "plan": "Basic",
+      "status": "active",
+      "joined": "2024-02-20",
+      "avatar": "AS"
+    },
+    {
+      "id": "3",
+      "name": "Pedro Lima",
+      "email": "pedro@email.com",
+      "password": "123456",
+      "role": "user",
+      "plan": "Premium",
+      "status": "inactive",
+      "joined": "2024-03-10",
+      "avatar": "PL"
+    },
+    {
+      "id": "4",
+      "name": "Julia Rocha",
+      "email": "julia@email.com",
+      "password": "123456",
+      "role": "user",
+      "plan": "Basic",
+      "status": "active",
+      "joined": "2024-04-05",
+      "avatar": "JR"
+    },
+    {
+      "name": "Robertt Luiz",
+      "email": "roberttluiz33@gmail.com",
+      "password": "3112@Rr",
+      "role": "user",
+      "plan": "Premium",
+      "status": "active",
+      "joined": "2026-03-23",
+      "avatar": "RL",
+      "weight": "100",
+      "height": "180",
+      "goal": "Emagrecimento",
+      "id": "Bi32O9Na3SU"
+    }
+  ],
+  "admin": [
+    {
+      "id": "0",
+      "name": "Admin MaxFit",
+      "email": "admin@maxfit.com",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ],
+  "workouts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "name": "Treino A - Peito e Tríceps",
+      "category": "Hipertrofia",
+      "days": [
+        "Segunda",
+        "Quinta"
+      ],
+      "exercises": [
+        {
+          "name": "Supino Reto",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90s",
+          "intensity": "Alta",
+          "obs": "Foco na contração"
+        },
+        {
+          "name": "Crucifixo Inclinado",
+          "sets": 3,
+          "reps": "10-12",
+          "rest": "60s",
+          "intensity": "Moderada",
+          "obs": ""
+        },
+        {
+          "name": "Tríceps Corda",
+          "sets": 4,
+          "reps": "12-15",
+          "rest": "60s",
+          "intensity": "Moderada",
+          "obs": "Cotovelos fixos"
+        },
+        {
+          "name": "Mergulho",
+          "sets": 3,
+          "reps": "Falha",
+          "rest": "90s",
+          "intensity": "Máxima",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "name": "Treino B - Costas e Bíceps",
+      "category": "Hipertrofia",
+      "days": [
+        "Terça",
+        "Sexta"
+      ],
+      "exercises": [
+        {
+          "name": "Puxada Frontal",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90s",
+          "intensity": "Alta",
+          "obs": ""
+        },
+        {
+          "name": "Remada Curvada",
+          "sets": 4,
+          "reps": "8-10",
+          "rest": "90s",
+          "intensity": "Alta",
+          "obs": "Costas retas"
+        },
+        {
+          "name": "Rosca Direta",
+          "sets": 3,
+          "reps": "10-12",
+          "rest": "60s",
+          "intensity": "Moderada",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "userId": 2,
+      "name": "Treino Full Body",
+      "category": "Condicionamento",
+      "days": [
+        "Segunda",
+        "Quarta",
+        "Sexta"
+      ],
+      "exercises": [
+        {
+          "name": "Agachamento",
+          "sets": 3,
+          "reps": "15",
+          "rest": "60s",
+          "intensity": "Moderada",
+          "obs": ""
+        },
+        {
+          "name": "Flexão",
+          "sets": 3,
+          "reps": "12",
+          "rest": "45s",
+          "intensity": "Leve",
+          "obs": ""
+        },
+        {
+          "name": "Prancha",
+          "sets": 3,
+          "reps": "45s",
+          "rest": "30s",
+          "intensity": "Leve",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "userId": "Bi32O9Na3SU",
+      "name": "Full Body — Dashboard",
+      "category": "Condicionamento",
+      "days": ["Segunda", "Quarta", "Sexta"],
+      "exercises": [
+        { "name": "Esteira",           "sets": 1, "reps": "30 min", "rest": "—",   "category": "Cardio",  "intensity": "Moderada", "obs": "Velocidade 6–8 km/h" },
+        { "name": "Agachamento Livre", "sets": 4, "reps": "12",     "rest": "60s", "category": "Pernas",  "intensity": "Alta",     "obs": "Joelhos alinhados" },
+        { "name": "Flexão de Braço",   "sets": 4, "reps": "15",     "rest": "45s", "category": "Peito",   "intensity": "Moderada", "obs": "Amplitude completa" },
+        { "name": "Remada Curvada",    "sets": 4, "reps": "12",     "rest": "60s", "category": "Costas",  "intensity": "Alta",     "obs": "Costas retas" },
+        { "name": "Prancha Abdominal", "sets": 4, "reps": "45s",    "rest": "30s", "category": "Core",    "intensity": "Moderada", "obs": "Respiração contínua" },
+        { "name": "Burpee",            "sets": 3, "reps": "12",     "rest": "60s", "category": "Cardio",  "intensity": "Alta",     "obs": "Explosão no salto" },
+        { "name": "Afundo",            "sets": 3, "reps": "12",     "rest": "45s", "category": "Pernas",  "intensity": "Moderada", "obs": "6 reps cada perna" },
+        { "name": "Mountain Climber",  "sets": 3, "reps": "40s",    "rest": "30s", "category": "Core",    "intensity": "Alta",     "obs": "Quadril nivelado" }
+      ]
+    },
+    {
+      "id": "4",
+      "userId": 4,
+      "name": "Treino C - Pernas",
+      "category": "Hipertrofia",
+      "days": [
+        "Quarta"
+      ],
+      "exercises": [
+        {
+          "name": "Leg Press",
+          "sets": 4,
+          "reps": "10-12",
+          "rest": "90s",
+          "intensity": "Alta",
+          "obs": ""
+        },
+        {
+          "name": "Cadeira Extensora",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "60s",
+          "intensity": "Moderada",
+          "obs": ""
+        },
+        {
+          "name": "Panturrilha em Pé",
+          "sets": 4,
+          "reps": "15-20",
+          "rest": "45s",
+          "intensity": "Leve",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "diets": [
+    {
+      "id": "1",
+      "userId": 1,
+      "name": "Dieta Bulking",
+      "goal": "Ganho de Massa",
+      "calories": 3200,
+      "protein": 220,
+      "carbs": 380,
+      "fat": 80,
+      "meals": [
+        {
+          "time": "07:00",
+          "name": "Café da Manhã",
+          "foods": [
+            "6 ovos mexidos",
+            "2 fatias de pão integral",
+            "1 banana",
+            "200ml leite"
+          ],
+          "calories": 620,
+          "protein": 42,
+          "carbs": 60,
+          "fat": 18
+        },
+        {
+          "time": "10:00",
+          "name": "Lanche",
+          "foods": [
+            "1 scoop whey",
+            "1 maçã",
+            "30g amendoim"
+          ],
+          "calories": 380,
+          "protein": 30,
+          "carbs": 35,
+          "fat": 14
+        },
+        {
+          "time": "13:00",
+          "name": "Almoço",
+          "foods": [
+            "200g frango grelhado",
+            "150g arroz integral",
+            "100g feijão",
+            "Salada verde"
+          ],
+          "calories": 720,
+          "protein": 55,
+          "carbs": 90,
+          "fat": 10
+        },
+        {
+          "time": "16:00",
+          "name": "Pré-Treino",
+          "foods": [
+            "1 scoop whey",
+            "1 banana",
+            "30g aveia"
+          ],
+          "calories": 420,
+          "protein": 32,
+          "carbs": 58,
+          "fat": 6
+        },
+        {
+          "time": "20:00",
+          "name": "Jantar",
+          "foods": [
+            "200g carne vermelha magra",
+            "150g batata doce",
+            "Legumes refogados"
+          ],
+          "calories": 680,
+          "protein": 48,
+          "carbs": 72,
+          "fat": 18
+        },
+        {
+          "time": "22:00",
+          "name": "Ceia",
+          "foods": [
+            "200g cottage",
+            "30g castanhas"
+          ],
+          "calories": 380,
+          "protein": 28,
+          "carbs": 12,
+          "fat": 22
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "userId": "Bi32O9Na3SU",
+      "name": "Plano Gerado — Dashboard",
+      "goal": "Condicionamento",
+      "calories": 3097,
+      "protein": 266,
+      "carbs": 303,
+      "fat": 97,
+      "meals": [
+        {
+          "time": "07:00", "name": "Café da Manhã",
+          "foods": ["4 ovos mexidos (200g)", "80g aveia com leite desnatado", "1 banana média (100g)", "200ml leite desnatado"],
+          "protein": 53, "carbs": 55, "fat": 15, "calories": 571
+        },
+        {
+          "time": "10:00", "name": "Lanche da Manhã",
+          "foods": ["1 scoop whey protein (30g)", "150g iogurte grego natural", "30g granola sem açúcar"],
+          "protein": 32, "carbs": 30, "fat": 8, "calories": 320
+        },
+        {
+          "time": "13:00", "name": "Almoço",
+          "foods": ["200g frango grelhado", "150g arroz integral cozido", "100g feijão carioca", "100g batata doce cozida", "Salada verde à vontade"],
+          "protein": 69, "carbs": 88, "fat": 22, "calories": 826
+        },
+        {
+          "time": "16:30", "name": "Pré-Treino",
+          "foods": ["1 scoop whey protein (30g)", "1 banana média (100g)", "40g aveia em flocos", "200ml água de coco"],
+          "protein": 35, "carbs": 67, "fat": 8, "calories": 472
+        },
+        {
+          "time": "20:00", "name": "Jantar",
+          "foods": ["180g patinho moído grelhado", "120g batata doce assada", "2 ovos cozidos", "Legumes refogados no azeite (150g)"],
+          "protein": 59, "carbs": 55, "fat": 29, "calories": 713
+        },
+        {
+          "time": "22:30", "name": "Ceia",
+          "foods": ["200g cottage light", "30g castanha-do-pará (4 unidades)", "1 colher de pasta de amendoim (15g)"],
+          "protein": 21, "carbs": 12, "fat": 17, "calories": 281
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "name": "Dieta Cutting",
+      "goal": "Perda de Gordura",
+      "calories": 1800,
+      "protein": 160,
+      "carbs": 180,
+      "fat": 55,
+      "meals": [
+        {
+          "time": "07:00",
+          "name": "Café da Manhã",
+          "foods": [
+            "3 claras + 1 ovo inteiro",
+            "1 fatia pão integral",
+            "1 fruta"
+          ],
+          "calories": 320,
+          "protein": 28,
+          "carbs": 32,
+          "fat": 8
+        },
+        {
+          "time": "12:00",
+          "name": "Almoço",
+          "foods": [
+            "150g frango",
+            "100g arroz integral",
+            "Salada à vontade"
+          ],
+          "calories": 480,
+          "protein": 42,
+          "carbs": 52,
+          "fat": 8
+        },
+        {
+          "time": "15:00",
+          "name": "Lanche",
+          "foods": [
+            "1 scoop whey",
+            "1 fruta"
+          ],
+          "calories": 280,
+          "protein": 28,
+          "carbs": 30,
+          "fat": 4
+        },
+        {
+          "time": "19:00",
+          "name": "Jantar",
+          "foods": [
+            "150g peixe grelhado",
+            "Legumes no vapor",
+            "100g batata doce"
+          ],
+          "calories": 420,
+          "protein": 38,
+          "carbs": 42,
+          "fat": 10
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Whey Protein 1kg",
+      "category": "Suplemento",
+      "price": 189.9,
+      "stock": 45,
+      "image": "🥛"
+    },
+    {
+      "id": "2",
+      "name": "Creatina 300g",
+      "category": "Suplemento",
+      "price": 79.9,
+      "stock": 30,
+      "image": "💊"
+    },
+    {
+      "id": "3",
+      "name": "Camiseta MaxFit",
+      "category": "Vestuário",
+      "price": 59.9,
+      "stock": 20,
+      "image": "👕"
+    },
+    {
+      "id": "4",
+      "name": "Shorts Treino",
+      "category": "Vestuário",
+      "price": 89.9,
+      "stock": 15,
+      "image": "🩳"
+    },
+    {
+      "id": "5",
+      "name": "Coqueteleira 700ml",
+      "category": "Acessório",
+      "price": 39.9,
+      "stock": 50,
+      "image": "🧴"
+    },
+    {
+      "id": "6",
+      "name": "Pre-Workout 300g",
+      "category": "Suplemento",
+      "price": 129.9,
+      "stock": 25,
+      "image": "⚡"
+    }
+  ],
+  "transactions": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

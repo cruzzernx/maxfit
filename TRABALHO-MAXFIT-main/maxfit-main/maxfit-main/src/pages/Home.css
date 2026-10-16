@@ -1,0 +1,280 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.home-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(16,185,129,0.03) 40px, rgba(16,185,129,0.03) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(16,185,129,0.03) 40px, rgba(16,185,129,0.03) 41px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] .home-bg {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(26,158,0,0.04) 40px, rgba(26,158,0,0.04) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(26,158,0,0.04) 40px, rgba(26,158,0,0.04) 41px);
+}
+
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(16,185,129,0.06) 0%, transparent 65%);
+}
+
+[data-theme="light"] .home-overlay {
+  background: radial-gradient(ellipse at 50% 30%, rgba(26,158,0,0.07) 0%, transparent 65%);
+}
+
+/* ── NAV ── */
+.home-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-nav-logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--text);
+}
+
+.home-nav-logo .green { color: var(--green); }
+
+.home-nav-actions { display: flex; gap: 12px; align-items: center; }
+
+.btn-ghost {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+.btn-cta {
+  padding: 10px 22px;
+  background: var(--green);
+  color: #000;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transition: all 0.2s;
+}
+.btn-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* ── MAIN ── */
+.home-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: 0 48px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── HERO ── */
+.home-hero {
+  padding: 80px 0 60px;
+  max-width: 640px;
+}
+
+.home-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+}
+
+.home-title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.home-title .green { color: var(--green); }
+
+.home-subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+.home-cta-group { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn-cta-lg {
+  padding: 16px 32px;
+  background: var(--green);
+  color: #000;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.btn-cta-lg:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(16,185,129,0.30); }
+
+.btn-ghost-lg {
+  padding: 16px 32px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.btn-ghost-lg:hover { border-color: var(--green); color: var(--green); }
+
+/* ── FEATURES ── */
+.home-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.home-feature-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: border-color 0.2s;
+}
+.home-feature-card:hover { border-color: var(--green); }
+
+.home-feature-icon { font-size: 28px; margin-bottom: 12px; }
+
+.home-feature-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.home-feature-card p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ── ROLES ── */
+.home-roles { margin-bottom: 60px; }
+
+.home-roles h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+  color: var(--text);
+}
+
+.home-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-role-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.home-role-card:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 20px rgba(16,185,129,0.08);
+}
+
+.home-role-icon { font-size: 36px; }
+
+.home-role-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.home-role-card p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.btn-role {
+  margin-top: 8px;
+  padding: 10px 20px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.btn-role:hover {
+  background: var(--green);
+  color: #000;
+  border-color: var(--green);
+}
+
+/* ── FOOTER ── */
+.home-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .home-nav { padding: 16px 24px; }
+  .home-main { padding: 0 24px 60px; }
+  .home-title { font-size: 40px; }
+  .home-features { grid-template-columns: repeat(2, 1fr); }
+  .home-roles-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .home-features { grid-template-columns: 1fr; }
+  .home-title { font-size: 32px; }
+}

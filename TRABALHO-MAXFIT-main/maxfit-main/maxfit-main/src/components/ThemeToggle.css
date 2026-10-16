@@ -1,0 +1,79 @@
+.theme-toggle-sidebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 500;
+  width: 100%;
+  transition: all 0.15s;
+  margin-bottom: 8px;
+}
+
+.theme-toggle-sidebar:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.toggle-track {
+  width: 34px;
+  height: 18px;
+  background: var(--surface-3);
+  border-radius: 9px;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.theme-toggle-sidebar:hover .toggle-track {
+  background: var(--green-dim);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: all 0.2s;
+}
+
+.toggle-thumb.dark  { left: 2px; }
+.toggle-thumb.light { left: 18px; background: var(--green); }
+
+.toggle-label {
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+/* Floating variant — páginas públicas */
+.theme-toggle-floating {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  transition: all 0.15s;
+}
+
+.theme-toggle-floating:hover {
+  border-color: var(--green);
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}

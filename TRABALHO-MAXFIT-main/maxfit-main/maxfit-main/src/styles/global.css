@@ -1,0 +1,102 @@
+/* ─── TEMA ESCURO (fixo) ───────────────────────────────────────── */
+:root {
+  data-theme: dark; /* sempre escuro */
+}
+
+:root,
+[data-theme="dark"] {
+  --bg:         #0B0F17;
+  --surface-2:  #131A26;
+  --surface-3:  #1E293B;
+  --surface-4:  #263346;
+  --green:      #10B981;
+  --green-dark: #059669;
+  --green-dim:  rgba(16,185,129,0.12);
+  --text:       #E2E8F0;
+  --text-dim:   #94A3B8;
+  --red:        #F87171;
+  --border:     rgba(255,255,255,0.08);
+
+  /* aliases para compatibilidade com código existente */
+  --black:   var(--bg);
+  --black-2: var(--surface-2);
+  --black-3: var(--surface-3);
+  --black-4: var(--surface-4);
+  --white:   var(--text);
+  --white-dim: var(--text-dim);
+
+  --scrollbar-track: #131A26;
+  --scrollbar-thumb: rgba(16,185,129,0.30);
+  --modal-overlay:   rgba(0,0,0,0.75);
+  --input-bg:        var(--surface-3);
+  --select-bg:       var(--surface-3);
+
+  /* sombras sutis */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.40);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.40);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.50);
+  --shadow-glow: 0 0 20px rgba(16,185,129,0.15);
+}
+
+
+/* ─── TEMA PRO (Preto Fosco + Dourado) ────────────────────────── */
+[data-pro="true"] {
+  --bg:         #080808;
+  --surface-2:  #0f0f0f;
+  --surface-3:  #161616;
+  --surface-4:  #1e1e1e;
+  --green:      #D4AF37;
+  --green-dark: #B8960C;
+  --green-dim:  rgba(212,175,55,0.10);
+  --text:       #F0EDE6;
+  --text-dim:   #888880;
+  --border:     #2C2A24;
+  --scrollbar-thumb: #3a3520;
+}
+
+/* ─── BASE ─────────────────────────────────────────────────────── */
+:root {
+  --radius: 10px;
+  --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+*   { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { transition: background 0.25s, color 0.25s; }
+
+body {
+  background:  var(--bg);
+  color:       var(--text);
+  font-family: var(--font);
+  min-height:  100vh;
+  transition:  background 0.25s, color 0.25s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { cursor: pointer; border: none; font-family: var(--font); }
+
+input, select, textarea {
+  font-family:  var(--font);
+  background:   var(--input-bg);
+  border:       1px solid var(--border);
+  color:        var(--text);
+  border-radius: var(--radius);
+  padding:      10px 14px;
+  width:        100%;
+  font-size:    14px;
+  outline:      none;
+  transition:   border-color 0.2s, background 0.25s, color 0.25s;
+}
+
+input:focus, select:focus, textarea:focus { border-color: var(--green); }
+
+input::placeholder, textarea::placeholder { color: var(--text-dim); }
+
+select option { background: var(--select-bg); color: var(--text); }
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }

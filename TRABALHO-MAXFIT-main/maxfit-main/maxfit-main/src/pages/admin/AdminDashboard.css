@@ -1,0 +1,272 @@
+/* ── Tokens locais do dashboard ────────────────────────────────── */
+.dashboard-wrap {
+  --d-bg:      #07090f;
+  --d-card:    #0c1118;
+  --d-border:  rgba(255, 255, 255, 0.055);
+  --d-dim:     #4b5a6e;
+  --d-text:    #dde3ec;
+  --d-radius:  13px;
+  --d-accent:  #10B981;
+  --d-accent2: rgba(16, 185, 129, 0.12);
+}
+
+/* ── Botões de ação rápida ─────────────────────────────────────── */
+.dash-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.dash-actions .btn-secondary {
+  background: var(--d-card);
+  border: 1px solid var(--d-border);
+  color: var(--d-dim);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+}
+
+.dash-actions .btn-secondary:hover {
+  border-color: var(--d-accent);
+  color: var(--d-accent);
+  background: var(--d-accent2);
+}
+
+/* ── Grid de stat cards ────────────────────────────────────────── */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+/* ── Stat card base ────────────────────────────────────────────── */
+.dash-stat {
+  background: var(--d-card);
+  border: 1px solid var(--d-border);
+  border-radius: var(--d-radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dash-stat::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16,185,129,0.18), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.dash-stat:hover {
+  border-color: rgba(16, 185, 129, 0.18);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5);
+}
+
+.dash-stat:hover::after { opacity: 1; }
+
+/* ── Stat card — destaque (Total de Alunos) ────────────────────── */
+.dash-stat--highlight {
+  background: linear-gradient(145deg, #0b1a13 0%, #0c1118 100%);
+  border-color: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 0 1px rgba(16,185,129,0.06) inset;
+}
+
+.dash-stat--highlight::after { opacity: 1; }
+
+/* ── Linha superior do card ────────────────────────────────────── */
+.dash-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dash-stat-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--d-dim);
+}
+
+.dash-stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--d-accent2);
+  border: 1px solid rgba(16,185,129,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--d-accent);
+  flex-shrink: 0;
+}
+
+.dash-stat--highlight .dash-stat-icon {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+/* ── Linha inferior do card ────────────────────────────────────── */
+.dash-stat-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dash-stat-value {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--d-text);
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.dash-stat--highlight .dash-stat-value {
+  color: var(--d-accent);
+}
+
+.dash-stat-sub {
+  font-size: 11px;
+  color: var(--d-dim);
+  margin-bottom: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* ── Alerta de estoque ─────────────────────────────────────────── */
+.dash-alert {
+  background: rgba(248, 113, 113, 0.05);
+  border: 1px solid rgba(248, 113, 113, 0.15);
+  border-left: 3px solid #F87171;
+  border-radius: var(--d-radius);
+  padding: 14px 18px;
+  margin-bottom: 18px;
+}
+
+.dash-alert h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--d-text);
+  margin-bottom: 10px;
+}
+
+.dash-alert-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dash-alert-tag {
+  background: rgba(248, 113, 113, 0.09);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 6px;
+  padding: 3px 11px;
+  font-size: 12px;
+  color: #F87171;
+  display: inline-flex;
+  gap: 5px;
+}
+
+/* ── Card do gráfico (largura total) ───────────────────────────── */
+.dash-chart-card {
+  background: var(--d-card);
+  border: 1px solid var(--d-border);
+  border-radius: var(--d-radius);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+
+.dash-chart-card .card-header {
+  margin-bottom: 18px;
+}
+
+.dash-chart-card .card-header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--d-text);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ── Grid inferior ─────────────────────────────────────────────── */
+.dash-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.dash-bottom-card {
+  background: var(--d-card);
+  border: 1px solid var(--d-border);
+  border-radius: var(--d-radius);
+  padding: 22px 24px;
+}
+
+.dash-bottom-card .card-header {
+  margin-bottom: 14px;
+}
+
+.dash-bottom-card .card-header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--d-text);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.dash-bottom-card table th {
+  color: var(--d-dim);
+  border-bottom-color: var(--d-border);
+  font-size: 10.5px;
+}
+
+.dash-bottom-card table td {
+  color: var(--d-text);
+  border-bottom-color: var(--d-border);
+  font-size: 13px;
+}
+
+.dash-bottom-card table tr:hover td {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* ── Planos counter ────────────────────────────────────────────── */
+.dash-plans-count {
+  text-align: center;
+  padding: 28px 0;
+}
+
+.dash-plans-number {
+  font-size: 58px;
+  font-weight: 900;
+  color: var(--d-accent);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.dash-plans-label {
+  font-size: 11px;
+  color: var(--d-dim);
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* ── Responsivo ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dash-bottom { grid-template-columns: 1fr; }
+  .dash-stats  { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .dash-stats { grid-template-columns: 1fr; }
+}
